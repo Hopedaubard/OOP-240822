@@ -3,11 +3,11 @@ package MyProjSem1;
 import java.util.ArrayList;
 import java.util.List;
 
-public class BottleOfWaterVendingMachine implements VendingMachine{
+public class HotDrinkVendingMachine implements VendingMachine{
     private List<Product> productList = new ArrayList<>();
     private int money;
 
-    public BottleOfWaterVendingMachine(List<Product> productList) {
+    public HotDrinkVendingMachine(List<Product> productList) {
         this.productList = productList;
     }
 
@@ -21,11 +21,11 @@ public class BottleOfWaterVendingMachine implements VendingMachine{
         }
         return null;
     }
-    public BottleOfWater getProduct (String name, int volume){
+    public Product getProduct(String name, int volume, int temperature) {
         for (Product product:productList){
-            if (product instanceof BottleOfWater){
-                if (product.getName().equals(name)&&((BottleOfWater)product).getVolume()==volume){
-                    return (BottleOfWater) product;
+            if (product instanceof HotDrink){
+                if (product.getName().equals(name)&&((HotDrink)product).getVolume()==volume&&((HotDrink)product).getTemperature()==temperature){
+                    return (HotDrink) product;
                 }
             }
         }
